@@ -1,0 +1,23 @@
+import java.util.Scanner;
+
+public class Solution {
+
+    public static void printEvenNumbers(int x, int y) {
+        for (int i = x; i <= y; i++) {
+            if (i % 2 == 0) {
+                System.out.print(i + " ");
+            }
+        }
+        System.out.println();
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int T = sc.nextInt();
+        while (T-- > 0) {
+            int x = sc.nextInt();
+            int y = sc.nextInt();
+            printEvenNumbers(x, y);
+        }
+    }
+}
