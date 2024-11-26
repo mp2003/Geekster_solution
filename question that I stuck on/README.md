@@ -5,4 +5,7 @@
   <li>
     https://www.hackerrank.com/contests/fs-27-m2-java-dsa-class-challenges/challenges/cc2-01-maximum-product-of-3-numbers/problem
   </li>
+  <li>
+    https://www.hackerrank.com/contests/fs-27-m2-java-dsa-class-challenges/challenges/minimum-difference-7-1/problem
+  </li>
 </ul>
