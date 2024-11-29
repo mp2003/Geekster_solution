@@ -17,6 +17,6 @@
     https://leetcode.com/problems/peak-index-in-a-mountain-array/
   </li>
   <li>
-    https://leetcode.com/problems/majority-element/
+    https://leetcode.com/problems/majority-element/ (Moore's Voting Algo)
   </li>
 </ul>
