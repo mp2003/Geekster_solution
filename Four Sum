@@ -1,0 +1,58 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+        public static List<List<Integer>> fourSum(int[] nums, int target) {
+        Arrays.sort(nums);
+        List<List<Integer>> list = new ArrayList<>();
+        int n = nums.length;
+        for (int i = 0; i < n; i++) {
+            int a = nums[i];
+            if (i > 0 && nums[i - 1] == nums[i])
+                continue;
+            for (int j = i + 1; j < n; j++) {
+                int b = nums[j];
+                if (j > i + 1 && nums[j - 1] == nums[j])
+                    continue;
+                int l = j + 1, r = n - 1;
+                while (l < r) {
+                    long sum = ((long) a + (long) b + (long) nums[l] + (long) nums[r]);
+                    if (sum > target)
+                        r--;
+                    else if (sum < target)
+                        l++;
+                    else {
+                        list.add(Arrays.asList(a, b, nums[l], nums[r]));
+                        l++;
+                        r--;
+                        while (l < r && nums[l - 1] == nums[l])
+                            l++;
+
+                        while (l < r && nums[r] == nums[r + 1])
+                            r--;
+                    }
+                }
+            }
+        }
+        return list;
+    }
+
+
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+        Scanner sc = new Scanner (System.in);
+        int n = sc.nextInt();
+        int arr [] = new int [n];
+        for ( int i =0 ; i < n ; i++){
+            arr[i] = sc.nextInt();
+        }
+        int k = sc.nextInt();
+        List <List <Integer>> li = fourSum(arr,k);
+        for ( List <Integer> l : li){
+            for ( int num : l){
+                System.out.print(num + " ");
+            }
+            System.out.println();
+        }
+    }
+}
