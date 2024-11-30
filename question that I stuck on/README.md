@@ -19,4 +19,7 @@
   <li>
     https://leetcode.com/problems/majority-element/ (Moore's Voting Algo)
   </li>
+  <li>
+    https://hackerrank.com/contests/fs-27-m2-java-dsa-class-challenges/challenges/sum-equals-zero/problem
+  </li>
 </ul>
