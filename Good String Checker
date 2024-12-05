@@ -1,0 +1,34 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+        Scanner sc = new Scanner(System.in);
+        String str = sc.nextLine();
+        Boolean ans = true ;
+        int freq []= new int [26];
+        for( int i = 0 ; i < str.length() ; i++){
+            int ind = (int)str.charAt(i) - (int)'a';
+            freq[ind]++;
+        }
+        int firstNonZeroFreq = -1, ind = -1;
+        for ( int i = 0 ; i < freq.length ; i++){
+            if ( freq[i] > 0){
+                ind = i;
+                firstNonZeroFreq = freq[i];
+                break;
+            }
+        }
+        // System.out.println(Arrays.toString(freq));
+        for ( int i =ind ;i < freq.length ; i++){
+            // System.out.print(freq[i]);
+            if (freq[i]>0 && freq[i] != firstNonZeroFreq){
+                ans = false ;
+                break;
+            }
+        }
+        System.out.print(ans);
+    }
+}
