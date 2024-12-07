@@ -1,0 +1,43 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int[] arr = new int[n];
+        for (int i = 0; i < n; i++) {
+            arr[i] = sc.nextInt();
+        }
+        
+        // Calculate prefix sums
+        int pre[] = new int[n + 1];
+        pre[0] = 0;
+        for (int i = 1; i < n + 1; i++) {
+            pre[i] = pre[i - 1] + arr[i - 1];
+        }
+        
+        // Calculate suffix sums
+        int suff[] = new int[n + 1];
+        suff[n] = 0;
+        for (int i = n - 1; i >= 0; i--) {
+            suff[i] = suff[i + 1] + arr[i];
+        }
+
+        // Check for the index where prefix and suffix match
+        boolean found = false;
+        for (int i = 0; i < n; i++) {
+            if (suff[i] == pre[i + 1]) {
+                System.out.print(i);
+                found = true;
+                break;
+            }
+        }
+
+        // If no such index exists
+        if (!found) {
+            System.out.print(-1); // Print -1 or any other indication of no valid index
+        }
+    }
+}
