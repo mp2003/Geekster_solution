@@ -1,0 +1,33 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int[] arr = new int[n];
+        for (int i = 0; i < n; i++) {
+            arr[i] = sc.nextInt();
+        }
+        int max = Integer.MIN_VALUE;
+        for ( int num : arr){
+            max = Math.max(num,max);
+        }
+        
+        int freq [] = new int [max+1];
+        for ( int num : arr){
+            freq[num]++;
+        }
+        int sum = 0;
+        for ( int i =0 ; i < max +1 ; i++ ){
+            if (freq[i] == 1){
+                // System.out.println(freq[i]  + " " + i);
+                
+                sum+=(i);
+            }
+        }
+        System.out.print(sum);
+    }
+}
