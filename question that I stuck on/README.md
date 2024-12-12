@@ -22,4 +22,7 @@
   <li>
     https://hackerrank.com/contests/fs-27-m2-java-dsa-class-challenges/challenges/sum-equals-zero/problem
   </li>
+  <li>
+    https://www.hackerrank.com/contests/fs-27-m2-java-dsa-class-challenges/challenges/rotate-number-1/
+  </li>
 </ul>
