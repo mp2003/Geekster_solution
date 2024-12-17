@@ -1,0 +1,32 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+        Scanner sc = new Scanner(System.in);
+        String str = sc.nextLine();
+        HashMap<Character, Integer> map = new HashMap<>();
+        for ( int i = 0 ;i < str.length() ; i++){
+            map.put(str.charAt(i),map.getOrDefault(str.charAt(i),0)+1);
+        }
+        List<Map.Entry<Character, Integer>> list = new ArrayList<>(map.entrySet());
+        list.sort((a, b) -> {
+            if (!a.getValue().equals(b.getValue())) {
+                return b.getValue() - a.getValue(); // descending by frequency
+            } else {
+                return a.getKey().compareTo(b.getKey()); // ascending by character
+            }
+        });
+        // System.out.print(list);
+        for (Map.Entry<Character, Integer> entry : list) {
+            char c = entry.getKey();
+            int freq = entry.getValue();
+            while(freq >0){
+            System.out.print(c );
+            freq--;
+            }
+        }
+    }
+}
