@@ -1,0 +1,41 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int m = sc.nextInt();
+        int mat[][] = new int[n][m];
+        int temp[][] = new int[n][m];
+        
+        // Reading the matrix
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < m; j++) {
+                mat[i][j] = sc.nextInt();
+            }
+        }
+        
+        for ( int i =0 ; i < n ; i++){
+            for ( int j =0 ; j < m; j++){
+                if ( mat[i][j] == 1){
+                    for ( int k =0 ; k < n ; k++){
+                        temp[k][j]= 1;
+                    }
+                    for ( int k = 0 ; k < m ; k++ ){
+                        temp[i][k]= 1;
+                    }
+                }
+            }
+        }
+        
+        for ( int arr[] : temp){
+            for ( int num : arr){
+                System.out.print(num+ " ");
+            }
+            System.out.println();
+        }
+    }
+}
