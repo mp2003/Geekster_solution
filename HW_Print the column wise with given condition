@@ -1,0 +1,33 @@
+import java.util.Scanner;
+
+public class ColumnWiseMatrixTraversal {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        // Input dimensions of the matrix
+        int M = sc.nextInt(); // Number of rows
+        int N = sc.nextInt(); // Number of columns
+
+        // Input all matrix elements
+        int[][] matrix = new int[M][N];
+        for (int i = 0; i < M; i++) {
+            for (int j = 0; j < N; j++) {
+                matrix[i][j] = sc.nextInt();
+            }
+        }
+
+        // Traverse the matrix column-wise
+        for (int col = 0; col < N; col++) {
+            if (col % 2 == 0) { // Even column: Top to Bottom
+                for (int row = 0; row < M; row++) {
+                    System.out.print(matrix[row][col] + " ");
+                }
+            } else { // Odd column: Bottom to Top
+                for (int row = M - 1; row >= 0; row--) {
+                    System.out.print(matrix[row][col] + " ");
+                }
+            }
+            System.out.println();
+        }
+    }
+}
